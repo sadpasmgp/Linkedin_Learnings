@@ -1,0 +1,30 @@
+03-08-2022 16:37:29.28 - INFO - Started validation of input parameters...
+03-08-2022 16:37:29.28 - INFO - Completed validation of input parameters
+03-08-2022 16:37:29.28 - INFO - Started handling of duplicates... Method: "AUTO"
+03-08-2022 16:37:29.28 - DEBUG - Deletion of 110 duplicate(s) succeeded
+03-08-2022 16:37:29.28 - INFO - Completed handling of duplicates in 0.001729 seconds
+03-08-2022 16:37:29.28 - INFO - Started handling of missing values...
+03-08-2022 16:37:29.28 - INFO - Found a total of 105 missing value(s)
+03-08-2022 16:37:29.28 - INFO - Started handling of NUMERICAL missing values... Method: "AUTO"
+03-08-2022 16:37:29.30 - DEBUG - LINREG imputation of 105 value(s) succeeded for feature "Age"
+03-08-2022 16:37:29.31 - INFO - Started handling of CATEGORICAL missing values... Method: "AUTO"
+03-08-2022 16:37:29.31 - INFO - Completed handling of missing values in 0.025665 seconds
+03-08-2022 16:37:29.31 - INFO - Started handling of outliers... Method: "WINZ"
+03-08-2022 16:37:29.31 - DEBUG - Outlier imputation of 11 value(s) succeeded for feature "Age"
+03-08-2022 16:37:29.35 - DEBUG - Outlier imputation of 97 value(s) succeeded for feature "Fare"
+03-08-2022 16:37:29.40 - DEBUG - Outlier imputation of 83 value(s) succeeded for feature "family_cnt"
+03-08-2022 16:37:29.40 - INFO - Completed handling of outliers in 0.091866 seconds
+03-08-2022 16:37:29.40 - INFO - Started conversion of DATETIME features... Granularity: s
+03-08-2022 16:37:29.40 - INFO - Completed conversion of DATETIME features in 0.0001 seconds
+03-08-2022 16:37:29.40 - INFO - Started encoding categorical features... Method: "AUTO"
+03-08-2022 16:37:29.40 - INFO - Completed encoding of categorical features in 0.0 seconds
+03-08-2022 16:37:29.40 - INFO - Started feature type conversion...
+03-08-2022 16:37:29.40 - DEBUG - Conversion to type INT succeeded for feature "Survived"
+03-08-2022 16:37:29.40 - DEBUG - Conversion to type INT succeeded for feature "Pclass"
+03-08-2022 16:37:29.40 - DEBUG - Conversion to type INT succeeded for feature "Sex"
+03-08-2022 16:37:29.40 - DEBUG - Conversion to type FLOAT succeeded for feature "Age"
+03-08-2022 16:37:29.40 - DEBUG - Conversion to type FLOAT succeeded for feature "Fare"
+03-08-2022 16:37:29.40 - DEBUG - Conversion to type INT succeeded for feature "Cabin_available"
+03-08-2022 16:37:29.40 - DEBUG - Conversion to type INT succeeded for feature "family_cnt"
+03-08-2022 16:37:29.40 - INFO - Completed feature type conversion for 7 feature(s) in 0.005578 seconds
+03-08-2022 16:37:29.40 - INFO - AutoClean process completed in 0.134196 seconds
