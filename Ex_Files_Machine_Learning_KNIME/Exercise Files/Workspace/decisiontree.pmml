@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML version="4.2" xmlns="http://www.dmg.org/PMML-4_2">
+  <Header copyright="sadpasha1">
+    <Application name="KNIME" version="4.6.1"/>
+  </Header>
+  <DataDictionary numberOfFields="8">
+    <DataField name="Survived" optype="categorical" dataType="string">
+      <Value value="0"/>
+      <Value value="1"/>
+    </DataField>
+    <DataField name="Pclass" optype="categorical" dataType="string">
+      <Value value="3"/>
+      <Value value="1"/>
+      <Value value="2"/>
+    </DataField>
+    <DataField name="Sex" optype="categorical" dataType="string">
+      <Value value="male"/>
+      <Value value="female"/>
+    </DataField>
+    <DataField name="Age" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.42" rightMargin="80.0"/>
+    </DataField>
+    <DataField name="SibSp" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="8.0"/>
+    </DataField>
+    <DataField name="Parch" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="6.0"/>
+    </DataField>
+    <DataField name="Fare" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="512.3292"/>
+    </DataField>
+    <DataField name="Embarked" optype="categorical" dataType="string">
+      <Value value="S"/>
+      <Value value="C"/>
+      <Value value="Q"/>
+    </DataField>
+  </DataDictionary>
+  <TreeModel modelName="DecisionTree" functionName="classification" splitCharacteristic="binarySplit" missingValueStrategy="lastPrediction" noTrueChildStrategy="returnNullPrediction">
+    <MiningSchema>
+      <MiningField name="Pclass" invalidValueTreatment="asIs"/>
+      <MiningField name="Sex" invalidValueTreatment="asIs"/>
+      <MiningField name="Age" invalidValueTreatment="asIs"/>
+      <MiningField name="SibSp" invalidValueTreatment="asIs"/>
+      <MiningField name="Parch" invalidValueTreatment="asIs"/>
+      <MiningField name="Fare" invalidValueTreatment="asIs"/>
+      <MiningField name="Embarked" invalidValueTreatment="asIs"/>
+      <MiningField name="Survived" invalidValueTreatment="asIs" usageType="target"/>
+    </MiningSchema>
+    <Node id="0" score="0" recordCount="623.0">
+      <True/>
+      <ScoreDistribution value="0" recordCount="382.0"/>
+      <ScoreDistribution value="1" recordCount="241.0"/>
+      <Node id="1" score="0" recordCount="403.0">
+        <SimpleSetPredicate field="Sex" booleanOperator="isIn">
+          <Array n="1" type="string">"male" </Array>
+        </SimpleSetPredicate>
+        <ScoreDistribution value="0" recordCount="330.0"/>
+        <ScoreDistribution value="1" recordCount="73.0"/>
+      </Node>
+      <Node id="146" score="1" recordCount="220.0">
+        <SimpleSetPredicate field="Sex" booleanOperator="isIn">
+          <Array n="1" type="string">"female" </Array>
+        </SimpleSetPredicate>
+        <ScoreDistribution value="0" recordCount="52.0"/>
+        <ScoreDistribution value="1" recordCount="168.0"/>
+        <Node id="147" score="1" recordCount="99.0">
+          <SimpleSetPredicate field="Pclass" booleanOperator="isIn">
+            <Array n="1" type="string">"3" </Array>
+          </SimpleSetPredicate>
+          <ScoreDistribution value="0" recordCount="48.0"/>
+          <ScoreDistribution value="1" recordCount="51.0"/>
+          <Node id="148" score="1" recordCount="81.0">
+            <SimplePredicate field="Fare" operator="lessOrEqual" value="23.35"/>
+            <ScoreDistribution value="0" recordCount="32.0"/>
+            <ScoreDistribution value="1" recordCount="49.0"/>
+            <Node id="149" score="1" recordCount="61.0">
+              <SimplePredicate field="Fare" operator="lessOrEqual" value="15.3729"/>
+              <ScoreDistribution value="0" recordCount="29.0"/>
+              <ScoreDistribution value="1" recordCount="32.0"/>
+              <Node id="150" score="1" recordCount="30.0">
+                <SimplePredicate field="Fare" operator="lessOrEqual" value="8.0396"/>
+                <ScoreDistribution value="0" recordCount="9.0"/>
+                <ScoreDistribution value="1" recordCount="21.0"/>
+              </Node>
+              <Node id="165" score="0" recordCount="31.0">
+                <SimplePredicate field="Fare" operator="greaterThan" value="8.0396"/>
+                <ScoreDistribution value="0" recordCount="20.0"/>
+                <ScoreDistribution value="1" recordCount="11.0"/>
+                <Node id="166" score="0" recordCount="15.0">
+                  <SimplePredicate field="Fare" operator="lessOrEqual" value="10.825"/>
+                  <ScoreDistribution value="0" recordCount="13.0"/>
+                  <ScoreDistribution value="1" recordCount="2.0"/>
+                </Node>
+                <Node id="173" score="1" recordCount="16.0">
+                  <SimplePredicate field="Fare" operator="greaterThan" value="10.825"/>
+                  <ScoreDistribution value="0" recordCount="7.0"/>
+                  <ScoreDistribution value="1" recordCount="9.0"/>
+                  <Node id="174" score="1" recordCount="7.0">
+                    <SimplePredicate field="Fare" operator="lessOrEqual" value="13.90835"/>
+                    <ScoreDistribution value="0" recordCount="0.0"/>
+                    <ScoreDistribution value="1" recordCount="7.0"/>
+                  </Node>
+                  <Node id="175" score="0" recordCount="9.0">
+                    <SimplePredicate field="Fare" operator="greaterThan" value="13.90835"/>
+                    <ScoreDistribution value="0" recordCount="7.0"/>
+                    <ScoreDistribution value="1" recordCount="2.0"/>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+            <Node id="180" score="1" recordCount="20.0">
+              <SimplePredicate field="Fare" operator="greaterThan" value="15.3729"/>
+              <ScoreDistribution value="0" recordCount="3.0"/>
+              <ScoreDistribution value="1" recordCount="17.0"/>
+            </Node>
+          </Node>
+          <Node id="191" score="0" recordCount="18.0">
+            <SimplePredicate field="Fare" operator="greaterThan" value="23.35"/>
+            <ScoreDistribution value="0" recordCount="16.0"/>
+            <ScoreDistribution value="1" recordCount="2.0"/>
+          </Node>
+        </Node>
+        <Node id="196" score="1" recordCount="121.0">
+          <SimpleSetPredicate field="Pclass" booleanOperator="isIn">
+            <Array n="2" type="string">"1" "2" </Array>
+          </SimpleSetPredicate>
+          <ScoreDistribution value="0" recordCount="4.0"/>
+          <ScoreDistribution value="1" recordCount="117.0"/>
+        </Node>
+      </Node>
+    </Node>
+  </TreeModel>
+</PMML>
