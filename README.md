@@ -1,2 +1,2 @@
 # Linkedin_Learnings
-Micro courses from Linkedin
+Completed Micro courses from Linkedin
